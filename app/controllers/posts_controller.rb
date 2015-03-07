@@ -28,7 +28,6 @@ class PostsController < ApplicationController
     post.text = status
     post.date =Time.now
     post.save
-    render :nothing => true
   end
   
   def log
