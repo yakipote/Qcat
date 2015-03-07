@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @user.catStatus %></h1>
+<% if @user.catStatus == "in" then%>
+<h1>おうちにいます</h1>
+<% else %>
+<h1>おさんぽ中</h1>
+<% end %>
+
 
 <% if @user.catStatus == "外出" then%>
 <%= image_tag 'cat2.png' %>

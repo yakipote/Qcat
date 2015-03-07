@@ -42,7 +42,7 @@ var doughnutData = [
 <% sum += value%>
  {
   value:<%= value %>,
-  <% if post.text =="帰宅"  then %>
+  <% if post.text =="in"  then %>
   color:"#aaf2fb"
   <% else %>
   color:"#ffe361"
@@ -54,7 +54,7 @@ var doughnutData = [
 <% value=((Time.now - tmp.date)/240).to_i %>
 <%sum+=value %>
 value:<%= value %>,
-<% if tmp.text =="外出"  then %>
+<% if tmp.text =="out"  then %>
   color:"#aaf2fb"
   <% else %>
   color:"#ffe361"
