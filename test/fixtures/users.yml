@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mail: MyString
+  name: MyString
+  pass: MyString
+  icon: 
+  catStatus: MyString
+  keyStatus: MyString
+
+two:
+  mail: MyString
+  name: MyString
+  pass: MyString
+  icon: 
+  catStatus: MyString
+  keyStatus: MyString

@@ -1,0 +1,71 @@
+<head><script src="Chart.js"></script></head>
+<body>
+
+
+<h1>Log</h1>
+
+  <canvas id="sample" height="200" width="200"></canvas>
+    <table class="table">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.text %></td>
+        <td><%= post.date %></td>
+        <td><%= link_to 'Destroy', post, method: :delete%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
+
+<script>
+var doughnutData = [
+
+<% tmp = @posts[0] %>
+<% sum = 0%>
+<% @posts.each do |post| %>
+<% value = ((post.date - tmp.date)/240).to_i %>
+<% sum += value%>
+ {
+  value:<%= value %>,
+  <% if post.text =="帰宅"  then %>
+  color:"#aaf2fb"
+  <% else %>
+  color:"#ffe361"
+  <% end %>
+ },
+ <% tmp = post.clone%>
+<% end %>
+{
+<% value=((Time.now - tmp.date)/240).to_i %>
+<%sum+=value %>
+value:<%= value %>,
+<% if tmp.text =="外出"  then %>
+  color:"#aaf2fb"
+  <% else %>
+  color:"#ffe361"
+  <% end %>
+},
+{
+  value:<%= 360 - sum %>,
+  color:"#ffffff"
+}
+];
+ 
+var myDoughnut = new Chart(document.getElementById("sample").
+getContext("2d")).Doughnut(doughnutData);
+ 
+</script>
+</body>
+
