@@ -2,7 +2,10 @@
 
 <h1><%= @user.catStatus %></h1>
 
-
-
+<% if @user.catStatus == "外出" then%>
+<%= image_tag 'cat1.png' %>
+<%else %>
+<%= image_tag 'cat2.png' %>
+<% end %>
 <br>
 
